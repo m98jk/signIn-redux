@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.g-btn {
+  text-decoration: none !important;
+}
+
+.sign {
+  padding: 20px;
+  text-decoration: none !important;
+}
+.td {
+  text-decoration: none !important;
+  color: black;
+}
