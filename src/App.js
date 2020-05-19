@@ -11,6 +11,10 @@ import Dashboard from './components/admin/Dashboard';
 import Navbar from './components/nav/Navbar';
 import Posts from './components/post';
 import NavTail from './components/nav/navTail';
+import { Btn } from './components/btns';
+
+//  test component below
+
 function Forget() {
   return (
     <div>
@@ -30,22 +34,21 @@ function Home() {
     <>
       <Navbar />
       {/* <NavTail /> */}
-      <div className=" bg-teal-700 justify-center flex h-screen">
-        <h1 className="text-red-700">Hello To Iraq Cities Open-Source Data</h1>
-        {/* <Posts /> */}
+      <div className=" bg-teal-700 justify-center flex h-screen ">
+        <div className="my-6">
+          <div>
+            <h1 className="text-red-700 ">
+              Hello To Iraq Cities Open-Source Data
+            </h1>
+            {/* <Posts /> */}
+            <Btn />
+          </div>
+        </div>
       </div>
     </>
   );
 }
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      eng: true,
-      loggedIn: false,
-    };
-  }
-
   render() {
     return (
       <Provider store={store}>
