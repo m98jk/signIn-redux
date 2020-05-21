@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
-import { increment, decrement, loggedin } from './redux/actions/actions';
+import { increment, decrement, loggedin } from '../../redux/actions/actions';
 
-export function Btn() {
+export function Btn({ style }) {
   const counter = useSelector((state) => state.counter);
   const islogged = useSelector((state) => state.logged);
 
@@ -17,7 +17,12 @@ export function Btn() {
         <button className="btn" onClick={() => dispatch(decrement())}>
           -
         </button>
-        <button className="btn" onClick={() => dispatch(loggedin())}>
+        <button
+          className={
+            'bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded ' + style.text
+          }
+          onClick={() => dispatch(loggedin())}
+        >
           {islogged ? 'LOG OUT' : 'LOG IN'}
         </button>
       </div>

@@ -10,10 +10,10 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from './components/admin/Dashboard';
 import Navbar from './components/nav/Navbar';
 import Posts from './components/post';
-import { Btn } from './components/btns';
+import { Btn } from './components/ui/buttons/btns';
 import Test from './test';
 import { useSelector } from 'react-redux';
-
+import logo from './logo.svg';
 //  test component below
 
 function Forget() {
@@ -26,25 +26,34 @@ function Forget() {
 
 function Home() {
   const dark = useSelector((state) => state.dark);
+  const darkStyle = {
+    text: 'font-sans text-teal-400 text-2xl ',
+    bg: ' bg-yellow-400 ',
+  };
+  const lightStyle = {
+    text: 'font-sans text-red-600 text-2xl ',
+    bg: ' bg-teal-600 ',
+  };
 
+  //theme changing
+  let style;
+  dark ? (style = darkStyle) : (style = lightStyle);
   return (
     <>
       <Navbar />
-      <div
-        className={
-          'justify-center flex h-screen ' +
-          (dark ? ' bg-yellow-400 ' : ' bg-teal-600 ')
-        }
-      >
+      <div className={'justify-center flex h-screen ' + style.bg}>
         <div className="my-6">
           <div>
-            <h1 className="text-green-700 ">
+            <h1 className={style.text}>
               Hello To Iraq Cities Open-Source Data
             </h1>
             {/* <Posts /> */}
-            <h2>Hrllo from header two</h2>
-            <Btn />
+            {/* <h2> {h1} </h2> */}
+            <Btn style={style} />
           </div>
+        </div>
+        <div>
+          <img src={logo} className="App-logo" alt="logo" />
         </div>
       </div>
     </>

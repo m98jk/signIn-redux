@@ -19,7 +19,6 @@ export default function Toggle() {
             <div className="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
             <div className="toggle__dot absolute w-6 h-6 bg-yellow-600 rounded-full shadow inset-y-0 left-0"></div>
           </div>
-          {/* <div className="ml-3 text-gray-700 font-medium">Toggle Me!</div> */}
         </label>
       </div>
     </div>

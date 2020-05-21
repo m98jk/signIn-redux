@@ -1,4 +1,4 @@
-import * as actions from "./types";
+import * as actions from './types';
 
 // export const fetchPost = () => (dispatch) => {
 //   fetch('https://iq-cities.herokuapp.com/city')
@@ -30,5 +30,13 @@ export const loggedin = () => {
 export const isDark = () => {
   return {
     type: actions.IS_DARK,
+  };
+};
+export const userInfo = (user) => {
+  return {
+    type: actions.USER_INFO,
+    payload: {
+      login: `Welcome ${user}`,
+    },
   };
 };
