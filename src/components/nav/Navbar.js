@@ -1,6 +1,7 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
+import { useSelector } from 'react-redux';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import StarIcon from '@material-ui/icons/StarBorder';
@@ -8,17 +9,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
+import Toggle from '../ui/buttons/toggle';
 
 const useStyles = makeStyles((theme) => ({
-  '@global': {
-    ul: {
-      margin: 0,
-      padding: 0,
-      listStyle: 'none',
-    },
-  },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
@@ -30,6 +23,13 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     margin: theme.spacing(1, 1.5),
+  },
+  Toggle: {
+    margin: theme.spacing(1, 4),
+    display: 'flex',
+    alignContent: 'center',
+    height: 10,
+    width: 15,
   },
 }));
 
@@ -54,6 +54,10 @@ export default function Pricing() {
           >
             Nabeel
           </Typography>
+
+          <div className={classes.Toggle}>
+            <Toggle />
+          </div>
           <nav>
             <Button
               href="/dashboard"
@@ -75,7 +79,7 @@ export default function Pricing() {
               className={classes.link}
               href="/signup"
               variant="contained"
-              className="sign"
+              // className="sign"
               color="primary"
             >
               Sign Up

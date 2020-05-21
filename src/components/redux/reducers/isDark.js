@@ -1,11 +1,11 @@
 import * as actions from "../actions/types";
-const isLogged = (state = false, action) => {
+const isDark = (state = false, action) => {
   switch (action.type) {
-    case actions.LOG_IN:
+    case actions.IS_DARK:
       return !state;
 
     default:
       return state;
   }
 };
-export default isLogged;
+export default isDark;

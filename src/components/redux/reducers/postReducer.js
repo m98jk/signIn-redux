@@ -1,4 +1,4 @@
-// import { FETCH_POST, NEW_POST } from '../actions/types';
+import * as actions from '../actions/types';
 
 // const initialSate = {
 //   items: [],
@@ -21,9 +21,9 @@
 const initialState = 0;
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT':
+    case actions.INCREMENT:
       return state + 1;
-    case 'DECREMENT':
+    case actions.DECREMENT:
       return state - 1;
     default:
       return state;

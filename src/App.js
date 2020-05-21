@@ -10,8 +10,9 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from './components/admin/Dashboard';
 import Navbar from './components/nav/Navbar';
 import Posts from './components/post';
-import NavTail from './components/nav/navTail';
 import { Btn } from './components/btns';
+import Test from './test';
+import { useSelector } from 'react-redux';
 
 //  test component below
 
@@ -22,25 +23,26 @@ function Forget() {
     </div>
   );
 }
-function Test() {
-  return (
-    <div>
-      <h1>New User Are Welcomed</h1>
-    </div>
-  );
-}
+
 function Home() {
+  const dark = useSelector((state) => state.dark);
+
   return (
     <>
       <Navbar />
-      {/* <NavTail /> */}
-      <div className=" bg-teal-700 justify-center flex h-screen ">
+      <div
+        className={
+          'justify-center flex h-screen ' +
+          (dark ? ' bg-yellow-400 ' : ' bg-teal-600 ')
+        }
+      >
         <div className="my-6">
           <div>
-            <h1 className="text-red-700 ">
+            <h1 className="text-green-700 ">
               Hello To Iraq Cities Open-Source Data
             </h1>
             {/* <Posts /> */}
+            <h2>Hrllo from header two</h2>
             <Btn />
           </div>
         </div>

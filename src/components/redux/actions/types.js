@@ -1,17 +1,6 @@
-export const FETCH_POST = 'FETCH_POST';
-export const NEW_POST = 'NEW_POST';
-export const increment = () => {
-  return {
-    type: 'INCREMENT',
-  };
-};
-export const decrement = () => {
-  return {
-    type: 'DECREMENT',
-  };
-};
-export const loggedin = () => {
-  return {
-    type: 'LOG_IN',
-  };
-};
+export const FETCH_POST = "FETCH_POST";
+export const NEW_POST = "NEW_POST";
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
+export const LOG_IN = "LOG_IN";
+export const IS_DARK = "IS_DARK";

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
-import { increment, decrement, loggedin } from './redux/actions/types';
+import { increment, decrement, loggedin } from './redux/actions/actions';
 
 export function Btn() {
   const counter = useSelector((state) => state.counter);
@@ -18,19 +18,18 @@ export function Btn() {
           -
         </button>
         <button className="btn" onClick={() => dispatch(loggedin())}>
-          LOG IN
+          {islogged ? 'LOG OUT' : 'LOG IN'}
         </button>
-        {islogged ? <h1>Welcome home</h1> : <h2>Please Log in</h2>}
       </div>
     </div>
   );
 }
 
-// const mapStateToProps = (state) => ({
-//   counter: state.counter,
-// });
+// // const mapStateToProps = (state) => ({
+// //   counter: state.counter,
+// // });
 
-// export default connect(
-//   mapStateToProps
-//   // mapDispatchToProps()
-// )(Btn);
+// // export default connect(
+// //   mapStateToProps
+// //   // mapDispatchToProps()
+// // )(Btn);
