@@ -1,5 +1,4 @@
 import * as actions from './types';
-
 // export const fetchPost = () => (dispatch) => {
 //   fetch('https://iq-cities.herokuapp.com/city')
 //     .then((res) => res.json())
@@ -36,7 +35,7 @@ export const userInfo = (user) => {
   return {
     type: actions.USER_INFO,
     payload: {
-      login: `Welcome ${user}`,
+      userData: user,
     },
   };
 };

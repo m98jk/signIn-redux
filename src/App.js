@@ -11,7 +11,6 @@ import Dashboard from './components/admin/Dashboard';
 import Navbar from './components/nav/Navbar';
 import Posts from './components/post';
 import { Btn } from './components/ui/buttons/btns';
-import Test from './test';
 import { useSelector } from 'react-redux';
 import logo from './logo.svg';
 //  test component below
@@ -28,7 +27,7 @@ function Home() {
   const dark = useSelector((state) => state.dark);
   const darkStyle = {
     text: 'font-sans text-teal-400 text-2xl ',
-    bg: ' bg-yellow-400 ',
+    bg: ' bg-yellow-300 ',
   };
   const lightStyle = {
     text: 'font-sans text-red-600 text-2xl ',
@@ -66,7 +65,6 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/forget" component={Forget} />
-          <Route path="/test" component={Test} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/dashboard" component={Dashboard} />
