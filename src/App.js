@@ -1,19 +1,22 @@
 import React from 'react';
-import Post from './components/post';
-import PostForm from './components/postForm';
-import { Provider } from 'react-redux';
-import store from './components/redux/store';
-import SignIn from './components/user/signIn';
-import SignUp from './components/user/signUp';
-import { Button, Link } from '@material-ui/core';
 import { Switch, Route } from 'react-router-dom';
-import Dashboard from './components/admin/Dashboard';
-import Navbar from './components/nav/Navbar';
-import Posts from './components/post';
-import { Btn } from './components/ui/buttons/btns';
+import { Provider } from 'react-redux';
 import { useSelector } from 'react-redux';
-import logo from './logo.svg';
-//  test component below
+//
+import {
+  Post,
+  Posts,
+  PostForm,
+  store,
+  SignIn,
+  SignUp,
+  Dashboard,
+  Navbar,
+  logo,
+  Btn,
+  ProfileCard,
+  NavTail,
+} from './allFiles';
 
 function Forget() {
   return (
@@ -23,15 +26,28 @@ function Forget() {
   );
 }
 
+const Profile = () => {
+  return (
+    <div>
+      {' '}
+      <div>
+        <NavTail />
+        <h1> Hello </h1>
+        <p>To my Profile </p>{' '}
+      </div>
+    </div>
+  );
+};
+
 function Home() {
   const dark = useSelector((state) => state.dark);
   const darkStyle = {
-    text: 'font-sans text-teal-400 text-2xl ',
-    bg: ' bg-yellow-300 ',
+    text: 'font-sans text-white text-2xl ',
+    bg: ' bg-indigo-900 ',
   };
   const lightStyle = {
-    text: 'font-sans text-red-600 text-2xl ',
-    bg: ' bg-teal-600 ',
+    text: 'font-sans text-black text-2xl ',
+    bg: ' bg-green-800 ',
   };
 
   //theme changing
@@ -39,15 +55,12 @@ function Home() {
   dark ? (style = darkStyle) : (style = lightStyle);
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className={'justify-center flex h-screen ' + style.bg}>
         <div className="my-6">
           <div>
-            <h1 className={style.text}>
-              Hello To Iraq Cities Open-Source Data
-            </h1>
+            <h1 className={style.text}>Hello To Iraq Cities</h1>
             {/* <Posts /> */}
-            {/* <h2> {h1} </h2> */}
             <Btn style={style} />
           </div>
         </div>
@@ -69,6 +82,8 @@ class App extends React.Component {
           <Route path="/signup" component={SignUp} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/navbar" component={Navbar} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/card" component={ProfileCard} />
         </Switch>
       </Provider>
     );

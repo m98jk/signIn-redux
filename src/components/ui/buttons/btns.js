@@ -6,8 +6,7 @@ import {
   loggedin,
   userInfo,
 } from '../../redux/actions/actions';
-
-export function Btn({ style }) {
+export default function Btn({ style }) {
   const counter = useSelector((state) => state.counter);
   const islogged = useSelector((state) => state.logged);
   const user = useSelector((state) => state.user);
@@ -38,12 +37,9 @@ export function Btn({ style }) {
           {islogged ? 'LOG OUT' : 'LOG IN'}
         </button>
         <h1>User Name is {user.payload}</h1>
-        {/* <button
-          className="btn bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded "
-          onClick={() => dispatch(userInfo(4))}
-        >
-          Log
-        </button> */}
+        <button className="trans">TRANSITION ANIMATION EFFECT</button>
+        <div></div>
+        <button class="btnx btnx-blue">Button</button>
       </div>
     </div>
   );

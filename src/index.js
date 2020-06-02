@@ -1,17 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./style/tailwind.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
-import "./style/main.css";
-import { createStore } from "redux";
-import rootReducer from "./components/redux/reducers/rootReducer";
-import { Provider } from "react-redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './style/tailwind.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+import './style/main.css';
+import { createStore } from 'redux';
+import rootReducer from './components/redux/reducers/rootReducer';
+import { Provider } from 'react-redux';
 
+// redux dev tools
+import { composeWithDevTools } from 'redux-devtools-extension';
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  composeWithDevTools()
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 ReactDOM.render(
@@ -20,7 +23,7 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </Provider>,
-  document.getElementById("root"),
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
