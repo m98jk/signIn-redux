@@ -6,7 +6,7 @@ import SignIn from './components/user/signIn';
 import SignUp from './components/user/signUp';
 import Dashboard from './components/admin/Dashboard';
 import Navbar from './components/nav/Navbar';
-import NavTail from './components/nav/nav';
+import Portfolio from './components/profile/portfolio';
 import Btn from './components/ui/buttons/btns';
 import logo from './logo.svg';
 import SignInCard from './components/ui/cards/SignInCard';
@@ -24,5 +24,5 @@ export {
   Btn,
   SignInCard,
   ProfileCard,
-  NavTail,
+  Portfolio,
 };

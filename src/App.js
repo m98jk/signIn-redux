@@ -15,7 +15,7 @@ import {
   logo,
   Btn,
   ProfileCard,
-  NavTail,
+  Portfolio,
 } from './allFiles';
 
 function Forget() {
@@ -25,19 +25,6 @@ function Forget() {
     </div>
   );
 }
-
-const Profile = () => {
-  return (
-    <div>
-      {' '}
-      <div>
-        <NavTail />
-        <h1> Hello </h1>
-        <p>To my Profile </p>{' '}
-      </div>
-    </div>
-  );
-};
 
 function Home() {
   const dark = useSelector((state) => state.dark);
@@ -55,7 +42,7 @@ function Home() {
   dark ? (style = darkStyle) : (style = lightStyle);
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className={'justify-center flex h-screen ' + style.bg}>
         <div className="my-6">
           <div>
@@ -82,7 +69,7 @@ class App extends React.Component {
           <Route path="/signup" component={SignUp} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/navbar" component={Navbar} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/profile" component={Portfolio} />
           <Route path="/card" component={ProfileCard} />
         </Switch>
       </Provider>
